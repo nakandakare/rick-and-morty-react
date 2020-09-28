@@ -2,10 +2,6 @@ import React, { Dispatch, SetStateAction, useState } from 'react';
 import './ItemsOverview.scss';
 import CharacterItem from '../CharacterItem/CharacterItem';
 import Item from '../Item/Item';
-import { useQuery } from '@apollo/react-hooks';
-import { gql } from 'apollo-boost';
-import Spinner from '../Spinner/Spinner';
-import ResultsError from '../ResultsError/ResultsError';
 
 interface IPageCount {
     pages: number,
@@ -14,87 +10,13 @@ interface IPageCount {
 
 type Props = {
     filterType: string,
-    searchInput: string
+    searchInput: string,
+    dataChar: any,
+    dataLoc: any,
+    dataEpi: any
 };
 
-const GET_CHARACTERS = gql`
-    query characters($name: String!) {
-        characters(page: 1, filter: { name: $name }) {
-            info {
-                pages,
-                count
-              }
-        results {
-            name
-            image
-            species
-            gender
-            created
-            }
-        }
-    }
-`;
-
-const GET_LOCATIONS = gql`
-    query locations($name: String!) {
-        locations(page: 1, filter: { name: $name }) {
-            info {
-                pages,
-                count
-              }
-            results{
-                name
-                type
-                dimension
-                residents {
-                  name
-                  image
-                }
-        }
-    }
-}
-`;
-
-const GET_EPISODES = gql`
-    query episodes($name: String!) {
-        episodes(page: 1, filter: { name: $name }) {
-            info {
-                pages,
-                count
-              }
-        results {
-            name
-            air_date
-            episode
-            characters {
-                name
-                image
-              } 
-            }
-        }
-    }
-`;
-const ItemsOverview = ({ filterType, searchInput }: Props) => {
-    
-    //obtiene los datos con apollo, si el input del search es menor a 3 caracteres, se "skippea" el query.
-    const { loading: loadingChar, error: errorChar, data: dataChar } = useQuery(GET_CHARACTERS, { variables: { name: searchInput }, skip: !(filterType === 'characters') || searchInput.length < 3 });
-
-    const { loading: loadingLoc, error: errorLoc, data: dataLoc } = useQuery(GET_LOCATIONS, { variables: { name: searchInput }, skip: !(filterType === 'locations') || searchInput.length < 3 });
-
-    const { loading: loadingEpi, error: errorEpi, data: dataEpi } = useQuery(GET_EPISODES, { variables: { name: searchInput }, skip: !(filterType === 'episodes') || searchInput.length < 3 });
-
-    if (loadingChar || loadingLoc || loadingEpi) {
-        return <Spinner />
-    }
-
-    if (errorChar || errorLoc || errorEpi) {
-        return <ResultsError message={`Error: we could not find the ${filterType}`} />
-    }
-
-    if (!dataChar && !dataLoc && !dataEpi) {
-        return <ResultsError message={`Please use the search bar to find the ${filterType}`} />
-    }
-
+const ItemsOverview = ({ filterType, dataChar, dataLoc, dataEpi  }: Props) => {
 
     return (
         <div className='itemsOverviewContainer'>

@@ -3,11 +3,12 @@ import './Searcher.scss';
 
 const Searcher = (props: any) => {
 
-    const { setSearchData, searchData } = props;
+    const { setSearchData, searchData, setPage } = props;
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         //En el tercer carater no se hace el skip para obtener los datos.
-        setSearchData({ ...searchData, searchInput: (event.target as HTMLInputElement).value })
+        setSearchData({ ...searchData, searchInput: (event.target as HTMLInputElement).value });
+        setPage(1);
     };
 
     const reset = () => {

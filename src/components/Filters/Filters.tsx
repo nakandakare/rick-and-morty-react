@@ -7,10 +7,11 @@ import FormControl from '@material-ui/core/FormControl';
 
 const Filters = (props: any) => {
 
-    const { setSearchData, searchData } = props;
+    const { setSearchData, searchData, setPage } = props;
 
     const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
         setSearchData({...searchData, filterType: (event.target as HTMLInputElement).value});
+        setPage(1);
     };
 
     return (

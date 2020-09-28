@@ -1,13 +1,13 @@
 @import "../../config";
 
 .itemsOverviewContainer {
-    height: 96%;
+    height: 86%;
     width: 94%;
 
     .itemsOverviewInner {
         padding-left: 3%;
         padding-right: 3%;
-        height: 90%;
+        height: 100%;
         width: 100%;
         display: grid;
         grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
@@ -47,5 +47,4 @@
             }
         }
     }
-
 }
