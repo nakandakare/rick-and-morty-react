@@ -1,0 +1,30 @@
+@import '../../config.scss';
+
+.searcherContainer {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    height: 7%;
+    background-color: $background;
+    border-left: 1px solid rgba(255,255,255,0.15);
+    
+    .searchBar {
+        background-color: $secondaryColor;
+        height: 2vh;
+        width: 80%;
+        border: none;
+        outline-style: none;
+        padding: 1vh 0 1vh 5vh;
+        border-radius: 20px;
+    }
+
+    .button {
+        background-color: $secondaryColor;
+        color: $fontColor;
+        outline-style: none;
+        border-radius: 10px;
+        height: 60%;
+        width: 10%;
+    }
+}
+

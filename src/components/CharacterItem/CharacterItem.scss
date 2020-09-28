@@ -1,0 +1,40 @@
+@import '../../config';
+
+.item {
+    height: 280px;
+    width: 100%;
+    color: $fontColor;
+    background-color: $primaryColor;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    padding: 5% 2%;
+    border-radius: 10px;
+
+    .img {
+        border-radius: 30px;
+        width: 70%;
+    }
+}
+
+.item:hover {
+    cursor: pointer;
+}
+
+.modalContainer {
+    .modalInner {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+
+        .imgModal {
+            border-radius: 30px;   
+        }
+        .name {
+            font-weight: bold;
+            padding: 2%;
+        }
+    }
+}

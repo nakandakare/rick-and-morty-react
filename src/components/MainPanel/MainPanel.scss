@@ -1,0 +1,23 @@
+.mainPanelContainer {
+    height: 90vh;
+    width: 100%;
+    display: flex;
+    flex-direction: row;
+
+    .filter {
+        height: 100%;
+        width: 15vw;
+    }
+
+    .mainContent {
+        height: 100%;
+        width: 85vw;
+    }
+    
+    .pagination {
+        height: 7%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+    }
+}

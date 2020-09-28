@@ -1,0 +1,71 @@
+@import "../../config";
+
+.itemContainer {
+    height: 200px;
+    width: 80%;
+    color: $fontColor;
+    background-color: $primaryColor;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 5% 2%;
+    border-radius: 10px;
+
+    .item {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+    .title {
+        font-weight: bold;
+        display: flex;
+        align-items: center;
+        flex-direction: column;
+        justify-content: space-between;
+        text-align: center;
+    }
+
+    .attributes {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        flex-direction: column;
+        text-align: center;
+        p {
+            padding: 5px;
+        }
+    }
+}
+
+.modalContainer {
+    .modalInner {
+        .characters {
+            display: flex;
+            flex-direction: row;
+            justify-content: space-around;
+            align-items: center;
+            margin: 5%;
+
+            .charactersTitle {
+                font-weight: bold;
+                padding-right: 5%;
+            }
+            .eachCharacter {
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                flex-direction: column;
+                height: 150px;
+                .imgModal {
+                    border-radius: 30px;
+                    width: 60%;
+                }
+                .name {
+                    text-align: center;
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,21 @@
+@import '../../config.scss';
+
+.filtersContainer {
+    height: 100%;
+    width: 15vw;
+    display: flex;
+    flex-direction: column;
+    background-color: $primaryColor;
+    border-right: 1px solid rgba(255, 255, 255, 0.13);
+    
+    .filterInner {
+        padding: 10%;
+
+        .title {
+            font-size: 1vw;
+            color: $fontColor;
+            font-weight: bold;
+            margin-bottom: 1%;
+        }
+    }
+}

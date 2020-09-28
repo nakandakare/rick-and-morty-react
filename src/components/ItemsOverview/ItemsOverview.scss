@@ -1,0 +1,51 @@
+@import "../../config";
+
+.itemsOverviewContainer {
+    height: 96%;
+    width: 94%;
+
+    .itemsOverviewInner {
+        padding-left: 3%;
+        padding-right: 3%;
+        height: 90%;
+        width: 100%;
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+        grid-gap: 50px;
+        justify-items: center;
+        align-items: center;
+        overflow-y: scroll;
+
+        .item {
+            height: 200px;
+            width: 80%;
+            color: $fontColor;
+            background-color: $primaryColor;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-evenly;
+            align-items: center;    
+            padding: 5% 2%;
+            border-radius: 10px;
+
+            .title {
+                font-weight: bold;
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+                justify-content: space-between;
+            }
+
+            .attributes {
+                display: flex;
+                align-items: center;
+                flex-direction: column;
+
+                p {
+                    padding: 5px;
+                }
+            }
+        }
+    }
+
+}

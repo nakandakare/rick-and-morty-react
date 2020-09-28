@@ -1,0 +1,12 @@
+.resultsErrorContainer {
+    height: 86%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    
+    .resultsErrorInner{
+        font-size: 200%;
+        color: white;
+    }
+}
