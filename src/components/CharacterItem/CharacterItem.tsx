@@ -11,7 +11,6 @@ type Props = {
     created: string
 };
 
-
 const useStyles = makeStyles((theme: Theme) =>
     createStyles({
         paper: {
@@ -28,7 +27,7 @@ const useStyles = makeStyles((theme: Theme) =>
 
 const CharacterItem = ({ name, image, species, gender, created }: Props) => {
     const classes = useStyles();
-    const [open, setOpen] = useState(false);
+    const [open, setOpen] = useState<boolean>(false);
 
     const handleOpen = () => {
         setOpen(true);
@@ -41,7 +40,7 @@ const CharacterItem = ({ name, image, species, gender, created }: Props) => {
     return (
         <div>
             <div className='item' onClick={handleOpen}>
-                <img className='img' src={image} />
+                <img className='img' src={image} alt='charImage'/>
                 <p className='title'>{name}</p>
             </div>
             <Modal
@@ -51,7 +50,7 @@ const CharacterItem = ({ name, image, species, gender, created }: Props) => {
                 className='modalContainer'
             >
                 <div className={classes.paper + ' modalInner'}>
-                    <img className='imgModal' src={image} />
+                    <img className='imgModal' src={image} alt='modalImage'/>
                     <p className='name'>
                         {name}
                     </p>

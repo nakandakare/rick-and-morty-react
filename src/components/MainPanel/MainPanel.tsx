@@ -79,7 +79,7 @@ const MainPanel = () => {
     const { filterType, searchInput } = searchData;
 
     //Un state para la paginación
-    const [page, setPage] = useState(1);
+    const [page, setPage] = useState<number>(1);
 
     //Se ejecuta esta funcion cuando se cambia de pagina
     const onPageChange = (event: React.ChangeEvent<unknown>, value: number) => {

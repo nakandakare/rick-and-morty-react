@@ -88,7 +88,7 @@ const Item = ({ name, attributeOne, attributeTwo, characters, category }: Props)
                         {
                             characters ? characters.slice(0, 5).map((character: {image: string, name: string}, i: number) => 
                             <div key={i} className='eachCharacter'>
-                                <img className='imgModal' src={character.image} />
+                                <img className='imgModal' src={character.image} alt='characterImg'/>
                                 <p className='name'>
                                     {character.name}
                                 </p>

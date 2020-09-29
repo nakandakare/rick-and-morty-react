@@ -1,12 +1,7 @@
-import React, { Dispatch, SetStateAction, useState } from 'react';
+import React from 'react';
 import './ItemsOverview.scss';
 import CharacterItem from '../CharacterItem/CharacterItem';
 import Item from '../Item/Item';
-
-interface IPageCount {
-    pages: number,
-    count: number
-}
 
 type Props = {
     filterType: string,
