@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './CharacterItem.scss';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import { characterUseStyles } from '../../utilities/styles';
 import Modal from '@material-ui/core/Modal';
 
 type Props = {
@@ -11,22 +11,8 @@ type Props = {
     created: string
 };
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        paper: {
-            position: 'absolute',
-            width: 500,
-            backgroundColor: '#18191a',
-            border: '2px solid #000',
-            boxShadow: theme.shadows[5],
-            padding: theme.spacing(2, 4, 3),
-            color: 'white'
-        },
-    }),
-);
-
 const CharacterItem = ({ name, image, species, gender, created }: Props) => {
-    const classes = useStyles();
+    const classes = characterUseStyles();
     const [open, setOpen] = useState<boolean>(false);
 
     const handleOpen = () => {

@@ -1,0 +1,14 @@
+@import "../../config";
+
+.itemsOverview {
+  padding-left: 3%;
+  padding-right: 3%;
+  height: 100%;
+  width: 94%;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  grid-gap: 50px;
+  justify-items: center;
+  align-items: center;
+  overflow-y: scroll;
+}

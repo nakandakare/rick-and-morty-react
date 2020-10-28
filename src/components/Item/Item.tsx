@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import './Item.scss';
-import { makeStyles, Theme, createStyles } from '@material-ui/core/styles';
+import { itemUseStyles } from '../../utilities/styles';
 import Modal from '@material-ui/core/Modal';
 
 type Props = {
@@ -11,22 +11,9 @@ type Props = {
     category: string
 };
 
-const useStyles = makeStyles((theme: Theme) =>
-    createStyles({
-        paper: {
-            position: 'absolute',
-            width: 800,
-            backgroundColor: '#18191a',
-            border: '2px solid #000',
-            boxShadow: theme.shadows[5],
-            padding: theme.spacing(2, 4, 3),
-            color: 'white'
-        },
-    }),
-);
 
 const Item = ({ name, attributeOne, attributeTwo, characters, category }: Props) => {
-    const classes = useStyles();
+    const classes = itemUseStyles();
     const [open, setOpen] = useState(false);
 
     const handleOpen = () => {
